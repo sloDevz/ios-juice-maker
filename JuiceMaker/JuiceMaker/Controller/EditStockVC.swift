@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditStockVC: UIViewController {
+final class EditStockVC: UIViewController {
     
     @IBOutlet var fruitStockLabels: [UILabel]!
     @IBOutlet var Steppers: [UIStepper]!
@@ -46,7 +46,7 @@ class EditStockVC: UIViewController {
         }
     }
     
-    @IBAction func closeButtonTapped(_ sender: UIButton) {
+    @IBAction private func closeButtonTapped(_ sender: UIButton) {
         for changedFruitStock in fruitStockLabels {
             guard let fruitStock = changedFruitStock as? FruitStockManagable,
                   let fruitStockLabel = changedFruitStock.text,
@@ -58,7 +58,7 @@ class EditStockVC: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func stepperTapped(_ sender: UIStepper) {
+    @IBAction private func stepperTapped(_ sender: UIStepper) {
         guard let tappedStepper = sender as? FruitStockManagable else { return }
         
         fruitStockLabels.forEach { label in

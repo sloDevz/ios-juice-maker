@@ -10,7 +10,7 @@ final class JuiceMakerVC: UIViewController {
   
     @IBOutlet var fruitStockLabels: [UILabel]!
     
-    let juiceMaker = JuiceMaker()
+    private let juiceMaker = JuiceMaker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
